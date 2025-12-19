@@ -1,0 +1,70 @@
+--@name Astro Trooper Empire
+--@author AstricUnionEmpire
+--@server
+
+--[[ Holos ]]--
+--@include https://raw.githubusercontent.com/AstricUnion/Libs/refs/heads/main/holos.lua as holos
+require("holos")
+
+
+local function blaster(offset)
+    local blaster = hologram.createPart(
+        Holo(SubHolo(Vector(-5,0,2),Angle(0,0,0),"models/hunter/blocks/cube025x025x025.mdl",Vector(1,1,1),false,Color(255,0,0,0)))
+
+    )
+    blaster:setPos(blaster:getPos() + offset)
+    return blaster
+end
+
+
+body = {
+    base = {
+        hologram.createPart(
+            Holo(SubHolo(Vector(50,0,15),Angle(15,0,180),"models/props_combine/combine_barricade_med01b.mdl",Vector(0.25,0.35,0.2),false,Color(255,40,40))),
+            Holo(SubHolo(Vector(42,27,15),Angle(15,30,180),"models/props_combine/combine_barricade_med01b.mdl",Vector(0.25,0.35,0.2),false,Color(255,40,40))),
+            Holo(SubHolo(Vector(42,-27,15),Angle(15,-30,180),"models/props_combine/combine_barricade_med01b.mdl",Vector(0.25,0.35,0.2),false,Color(255,40,40))),
+            Holo(SubHolo(Vector(-50,0,5),Angle(15,180,180),"models/props_combine/combine_barricade_med01b.mdl",Vector(0.25,0.35,0.2),false,Color(255,40,40))),
+            Holo(SubHolo(Vector(-42,27,2),Angle(15,150,180),"models/props_combine/combine_barricade_med01b.mdl",Vector(0.25,0.35,0.2),false,Color(255,40,40))),
+            Holo(SubHolo(Vector(-42,-26,2),Angle(15,210,180),"models/props_combine/combine_barricade_med01b.mdl",Vector(0.25,0.35,0.2),false,Color(255,40,40))),
+            Holo(SubHolo(Vector(0,0,0),Angle(0,0,0),"models/props_combine/combine_train02a.mdl",Vector(0.15,0.15,0.05),false,Color(255,40,40))),
+            Holo(SubHolo(Vector(0,0,0),Angle(0,90,0),"models/props_combine/combine_train02a.mdl",Vector(0.15,0.15,0.05),false,Color(255,40,40))),
+            Holo(SubHolo(Vector(0,0,0),Angle(0,-90,0),"models/props_combine/combine_train02a.mdl",Vector(0.15,0.15,0.05),false,Color(255,40,40))),
+            Holo(SubHolo(Vector(0,0,0),Angle(0,180,0),"models/props_combine/combine_train02a.mdl",Vector(0.15,0.15,0.05),false,Color(255,40,40))),
+            Holo(SubHolo(Vector(0,60,12),Angle(-150,90,0),"models/props_combine/combine_barricade_med02a.mdl",Vector(0.25,0.28,0.28),false,Color(255,40,40))),
+            Holo(SubHolo(Vector(0,-60,12),Angle(-150,-90,0),"models/props_combine/combine_barricade_med02a.mdl",Vector(0.25,0.28,0.28),false,Color(255,40,40)))
+        ),
+        hologram.createPart(
+            Holo(SubHolo(Vector(0,0,-11),Angle(0,0,0),"models/props_phx/wheels/moped_tire.mdl",Vector(2.78,2.78,2.7),false,Color(255,40,40),"models/props_combine/metal_combinebridge001"))
+        ),
+        hologram.createPart(
+            Holo(SubHolo(Vector(0,0,-20),Angle(0,0,90),"models/props_wasteland/wheel03a.mdl",Vector(0.27,0.18,0.27),false,Color(255,40,40)))
+        ),
+        hologram.createPart(
+            Holo(SubHolo(Vector(0,0,-10),Angle(90,0,0),"models/props_c17/pulleywheels_large01.mdl",Vector(1.2,2,2),false,Color(255,40,40),"models/props_combine/metal_combinebridge001"))
+        )
+    },
+    head = hologram.createPart(
+        Holo(SubHolo(Vector(0,0,45),Angle(0,0,0))),
+        Holo(SubHolo(Vector(0,0,45),Angle(0,0,0),"models/hunter/misc/sphere075x075.mdl",Vector(1.1,1.1,1.1),true,Color(0,0,0),"models/debug/debugwhite")),
+        
+        Holo(SubHolo(Vector(16,0,55),Angle(90,0,0),"models/holograms/hq_icosphere.mdl",Vector(0.25,0.25,0.25),true,Color(255,40,40),"models/debug/debugwhite")),
+        Holo(SubHolo(Vector(16,0,35),Angle(90,0,0),"models/holograms/hq_icosphere.mdl",Vector(0.25,0.25,0.25),true,Color(255,40,40),"models/debug/debugwhite")),
+        Holo(SubHolo(Vector(16,10,45),Angle(90,0,0),"models/holograms/hq_icosphere.mdl",Vector(0.25,0.25,0.25),true,Color(255,40,40),"models/debug/debugwhite")),
+        Holo(SubHolo(Vector(16,-10,45),Angle(90,0,0),"models/holograms/hq_icosphere.mdl",Vector(0.25,0.25,0.25),true,Color(255,40,40),"models/debug/debugwhite")),
+        Holo(SubHolo(Vector(16,7,38),Angle(90,0,0),"models/holograms/hq_icosphere.mdl",Vector(0.25,0.25,0.25),true,Color(255,40,40),"models/debug/debugwhite")),
+        Holo(SubHolo(Vector(16,-7,38),Angle(90,0,0),"models/holograms/hq_icosphere.mdl",Vector(0.25,0.25,0.25),true,Color(255,40,40),"models/debug/debugwhite")),
+        Holo(SubHolo(Vector(16,7,52),Angle(90,0,0),"models/holograms/hq_icosphere.mdl",Vector(0.25,0.25,0.25),true,Color(255,40,40),"models/debug/debugwhite")),
+        Holo(SubHolo(Vector(16,-7,52),Angle(90,0,0),"models/holograms/hq_icosphere.mdl",Vector(0.25,0.25,0.25),true,Color(255,40,40),"models/debug/debugwhite")),
+        
+        
+        
+        Holo(SubHolo(Vector(15,0,45),Angle(0,0,0),"models/holograms/hq_icosphere.mdl",Vector(0.72,1.9,1.9),true,Color(205,40,40),"models/debug/debugwhite")),
+        Holo(SubHolo(Vector(17,0,45),Angle(0,0,0),"models/holograms/hq_icosphere.mdl",Vector(0.5,1.35,1.35),true,Color(255,255,255),"models/debug/debugwhite")),
+        Holo(SubHolo(Vector(-5,0,45),Angle(-90,180,0),"models/props_combine/combine_booth_short01a.mdl",Vector(0.32,0.32,0.26),false,Color(255,40,40))),
+        Holo(SubHolo(Vector(5,0,45),Angle(-90,0,0),"models/props_combine/combine_booth_short01a.mdl",Vector(0.32,0.32,0.26),false,Color(255,40,40))),
+        Holo(SubHolo(Vector(1,0,40),Angle(-50,180,0),"models/props_combine/combine_booth_short01a.mdl",Vector(0.32,0.32,0.26),false,Color(255,0,0,255))),
+        Holo(SubHolo(Vector(-3,0,51),Angle(-190,0,0),"models/props_combine/combine_booth_short01a.mdl",Vector(0.31,0.31,0.26),false,Color(255,40,40),"models/props_combine/metal_combinebridge001"))
+    ),
+    leftBlaster = blaster(Vector(0, 140, 0)),
+    rightBlaster = blaster(Vector(0, -140, 0))
+}
